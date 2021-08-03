@@ -7,11 +7,12 @@ function HikeCollection() {
     const [hikes, setHikes] = useState([])
     useEffect(() => {
         async function fetchHikes() {
-            const res = await fetch('/hikes')
+            const res = await fetch('http://localhost:3000/hikes')
             if(res.ok) {
                 const data = await res.json()
                 setHikes(data)
                 console.log(data)
+                
             }
         }
         fetchHikes()

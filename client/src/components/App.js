@@ -8,7 +8,7 @@ import MyProfile from './MyProfile'
 function App() {
   const [user, setUser] = useState(null);
 
-  if (!user) return <Login onLogin={setUser} />
+   if (!user) return <Login onLogin={setUser} />
 
   return (
     <>
@@ -16,13 +16,13 @@ function App() {
       <NavBar user = {user} setUser = {setUser}/>
         <main>
           <Switch> 
-            <Route path = "/login">
+            <Route exact path = "/login">
               <Login user = {user}/>
             </Route>
-            <Route path = "/users/:id"> 
+            <Route exact path = "/users/:id"> 
               <MyProfile user = {user}/>
             </Route>
-            <Route path="/"> 
+            <Route exact path="/"> 
               <HikeCollection user = {user}/>
             </Route>
           </Switch>
