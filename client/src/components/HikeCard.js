@@ -1,10 +1,13 @@
-// When one hike is clicked, displays all information about that hike and only that hike. 
 import React from 'react'
+import {Card, Image} from './style'
 
-export default function HikeCard() {
+function HikeCard({hike}) {
     return (
-        <div>
-            
-        </div>
+        <Card>
+            <Image src = {hike.image_url} alt = {hike.name} />
+            <h2>{hike.name}</h2>
+        </Card>
     )
 }
+
+export default HikeCard

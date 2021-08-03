@@ -1,10 +1,11 @@
-// Shows the hikes that the logged in user has been on before. Will not be an option for those not logged in.
 import React from 'react'
 
-export default function MyProfile() {
+function MyProfile() {
     return (
         <div>
-            
+            These are the hikes I've been on
         </div>
     )
 }
+
+export default MyProfile

@@ -1,10 +1,11 @@
-// Creates a new user. 
 import React from 'react'
 
-export default function SignupForm() {
+function SignupForm() {
     return (
         <div>
-            
+            Same as log in form, but posts new user.
         </div>
     )
 }
+
+export default SignupForm
