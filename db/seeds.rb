@@ -10,6 +10,11 @@
 
 puts "Creating Hikes..."
 Hike.create(name: 'Old Rag', length: 9.1, elevation_gain: 2348, x_coordinate: 38.57135, y_coordinate: -78.29359, image_url: "https://www.hikingupward.com/SNP/OldRag/images/MapSmall.gif")
+Hike.create(name: 'Craggy Pinnacle', length: 1.1, elevation_gain: 230, x_coordinate: 35.70419, y_coordinate: -82.37355, image_url: "https://www.hikingupward.com/NCSP/CraggyPinnacle/images/MapSmall.gif")
+Hike.create(name: 'Three Top Mountain', length: 4.7, elevation_gain: 1492, x_coordinate: 36.42188, y_coordinate: -81.59793, image_url: "https://www.hikingupward.com/NCSP/ThreeTopMountain/images/MapSmall.gif")
+Hike.create(name: 'Chimney Top', length: 5.4, elevation_gain: 1960, x_coordinate: 38.98159, y_coordinate: -79.23113, image_url: "https://www.hikingupward.com/MNF/ChimneyTop/images/MapSmall.gif")
+Hike.create(name: "Strickler Knob", length: 5.8, elevation_gain: 1050, x_coordinate: 38.69143, y_coordinate: -78.58004, image_url: "https://www.hikingupward.com/GWNF/StricklerKnob/images/MapSmall.gif")
+
 
 # puts "Creating Trips..."
 # Trip.create(user_id: 1, hike_id: 1)
