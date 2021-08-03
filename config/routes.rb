@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get "/", to: "hike#index"
   get "users/:id", to: "users#show"
   get "hikes/:id", to: "hikes#show"
-  post "signup", to "users#create"
-  post "login", to "sessions#create"
+  post "signup", to: "users#create"
+  post "login", to: "sessions#create"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
