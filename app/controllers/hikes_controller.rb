@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
     def index 
-        render json: Hikes.all 
+        render json: Hike.all 
     end
 end
