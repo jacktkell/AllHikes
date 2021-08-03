@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   # get "users/:id", to: "users#show"
   # get "hikes/:id", to: "hikes#show"
 
+
+  post "/login", to: "login#create"
+
   resources :users, only: [:create]
   resources :hikes, only: [:index]
 
