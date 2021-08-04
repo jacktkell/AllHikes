@@ -1,23 +1,20 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react';
 import {Card, Image} from './style'
+import {useParams} from "react-router-dom";
 
 function HikePage() {
-    
-    // function HikeCollection() {
-    //     const [hikes, setHikes] = useState([])
-    //     useEffect(() => {
-    //         async function fetchHikes() {
-    //             const res = await fetch('http://localhost:3000/hikes/$id')
-    //             if(res.ok) {
-    //                 const data = await res.json()
-    //                 setHikes(data)
-    //                 console.log(data)
-                    
-    //             }
-    //         }
-    //         fetchHikes()
-    //     }, []);
-    
+
+    const id = useParams().id
+
+    const [hike, setHike] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:3000/hikes/${id}`)
+          .then((r) => r.json())
+          .then((hike) => {
+            setHike(hike);
+          });
+      }, [id]);
+
     
     
     return (

@@ -7,6 +7,9 @@ import MyProfile from './MyProfile'
 import Map from './Map'
 import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
+import HikePage from './HikePage';
+
+
 function App() {
   const [currentUser, setCurrentUser] = useState([]);
   //  if (!user) return <Login onLogin={setUser} />
@@ -25,8 +28,11 @@ function App() {
             <Route exact path = "/login">
               <LoginForm setCurrentUser={setCurrentUser} />
             </Route>
-            <Route exact path = "/users/$id"> 
+            <Route exact path = "/users/:id"> 
               <MyProfile />
+            </Route>
+            <Route exact path = "/hikes/:id"> 
+              <HikePage />
             </Route>
             <Route exact path="/map"> 
               <Map />
