@@ -1,5 +1,6 @@
 // https://www.youtube.com/watch?v=Pf7g32CwX_s
 // other map styles: https://snazzymaps.com/
+//npm install --save --legacy-peer-deps react-google-maps
 
 import React, { useState, useEffect } from "react";
 import {
@@ -79,7 +80,7 @@ useEffect(() => {
           }}
         >
           <div>
-              {/* <p>park details</p> */}
+              {/* <p>can add a link to hike</p> */}
             <h3>{selectedHike.name}</h3>
             <p>{selectedHike.length} miles</p>
           </div>

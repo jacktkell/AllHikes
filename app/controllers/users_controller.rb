@@ -10,15 +10,19 @@ class UsersController < ApplicationController
     
 
     def show
-        user = User.find(params[:id])
+        user = User.find_by(id: params[:id])
+       
         if user
-          user.hikes.to_json()
+          render json: user
         else
-          {error: "User not found"}.to_json
+           render json: {error: "User not found"}
         end
     end
 
 
+    def index
+        render json: User.all 
+    end
 
 
     private 
