@@ -11,6 +11,8 @@ import {
   InfoWindow
 } from "react-google-maps";
 import mapStyles from "./mapStyles";
+import {Button} from './style'
+import {Link, Router} from 'react-router-dom'
 
 function Map() {
 
@@ -29,7 +31,7 @@ useEffect(() => {
     fetchHikes()
 }, []);
 
-
+  
   const [selectedHike, setSelectedHike] = useState(null);
 
   useEffect(() => {
@@ -60,7 +62,9 @@ useEffect(() => {
           }}
           onClick={() => {
             setSelectedHike(hike);
+
           }}
+
         // SET ICON
         //   icon={{
         //     url: `./107692652-hiking-vector-icon-isolated-on-transparent-background-hiking-logo-concept.jpg`,
@@ -83,6 +87,10 @@ useEffect(() => {
               {/* <p>can add a link to hike</p> */}
             <h3>{selectedHike.name}</h3>
             <p>{selectedHike.length} miles</p>
+
+            {/* <Link to="/hikes/${selectedHike.id}">Link</Link>
+            <Button as = {Link} to ={src}> Details </Button> */}
+            
           </div>
         </InfoWindow>
       )}

@@ -25,5 +25,5 @@ Hike.create(name: 'Max Patch Mountain', length:7.1, elevation_gain: 2061, x_coor
 puts "Creating Trips..."
 Trip.create(user_id: 1, hike_id: 33)
 
-# puts "Creating Comments..."
-# Comment.create(user_id: 1, hike_id: 1, content: "Very cool")
+puts "Creating Comments..."
+Comment.create(user_id: 1, hike_id: 33, content: "Very cool")

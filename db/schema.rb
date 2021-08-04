@@ -16,13 +16,11 @@ ActiveRecord::Schema.define(version: 2021_08_02_142025) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "user_id_id"
-    t.bigint "hike_id_id"
+    t.integer "user_id"
+    t.integer "hike_id"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["hike_id_id"], name: "index_comments_on_hike_id_id"
-    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
   end
 
   create_table "hikes", force: :cascade do |t|
