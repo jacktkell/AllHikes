@@ -8,10 +8,9 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-import mapStyles from "./mapStyles";
+// import mapStyles from "./mapStyles";
 
 function Map() {
-
 
 
     //fetch hike data
@@ -27,7 +26,6 @@ useEffect(() => {
     }
     fetchHikes()
 }, []);
-
 
 
   const [selectedHike, setSelectedHike] = useState(null);
@@ -49,7 +47,7 @@ useEffect(() => {
     <GoogleMap
       defaultZoom={10}
       defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
-      defaultOptions={{ styles: mapStyles }}
+    //   defaultOptions={{ styles: mapStyles }}
     >
       {hikeData.map(hike => (
         <Marker
@@ -61,10 +59,11 @@ useEffect(() => {
           onClick={() => {
             setSelectedHike(hike);
           }}
-          icon={{
-            url: `/skateboarding.svg`,
-            scaledSize: new window.google.maps.Size(25, 25)
-          }}
+        // SET ICON
+        //   icon={{
+        //     url: `/skateboarding.svg`,
+        //     scaledSize: new window.google.maps.Size(25, 25)
+        //   }}
         />
       ))}
 
@@ -74,11 +73,12 @@ useEffect(() => {
             setSelectedHike(null);
           }}
           position={{
-            // lat: hike.x_coordinate,
-            // lng: hike.y_coordinate
+            // lat: selectedHike.x_coordinate,
+            // lng: selectedHike.y_coordinate
           }}
         >
           <div>
+              <p>park details</p>
             {/* <h2>{selectedPark.properties.NAME}</h2>
             <p>{selectedPark.properties.DESCRIPTIO}</p> */}
           </div>

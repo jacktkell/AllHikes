@@ -9,6 +9,7 @@ function NavBar() {
         <Wrapper>
             <Logo>All-Hikes</Logo>
             <Nav> 
+                <Button as = {Link} to = "/map"> Map </Button>
                 <Button as = {Link} to = "/"> Home </Button>
                 <Button as = {Link} to = "/login">Log in </Button>
                 <Button as = {Link} to = "/users/:id"> My Profile </Button>

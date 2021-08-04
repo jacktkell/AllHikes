@@ -4,6 +4,7 @@ import HikeCollection from './HikeCollection'
 import NavBar from './NavBar'
 import Login from './Login'
 import MyProfile from './MyProfile'
+import Map from './Map'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route exact path = "/users/:id"> 
               <MyProfile user = {user}/>
+            </Route>
+            <Route exact path="/map"> 
+              <Map user = {user}/>
             </Route>
             <Route exact path="/"> 
               <HikeCollection user = {user}/>
