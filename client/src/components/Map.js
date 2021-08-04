@@ -90,6 +90,7 @@ useEffect(() => {
 
             {/* <Link to="/hikes/${selectedHike.id}">Link</Link>
             <Button as = {Link} to ={src}> Details </Button> */}
+            <a href={selectedHike.id}>Link</a>
             
           </div>
         </InfoWindow>

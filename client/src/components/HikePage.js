@@ -16,6 +16,7 @@ function HikePage() {
       }, [id]);
     
     const comments = hike.comments
+    console.log (comments)
     return (
       <div>
         <Card>
@@ -25,7 +26,9 @@ function HikePage() {
             <p>Parking Lot: {hike.x_coordinate}, {hike.y_coordinate}</p>
             <Image src = {hike.image_url} alt = {hike.name} />
         
-        {comments.map((comment) => <li>{comment.content}</li>)}
+        {/* {comments.map((comment) => <li>{comment.content}</li>)} */}
+        {comments?comments.map((comment) => <li>{comment.content}</li>):null}
+
 
         </Card>
         
