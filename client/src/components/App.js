@@ -13,14 +13,14 @@ function App() {
 
   return (
     <>
-    {/* <div style={{backgroundImage: `url("https://i.pinimg.com/originals/d4/32/30/d4323062065c96e06e794370cfc01571.png")`}}></div> */}
+    <div style={{backgroundImage: `url("https://i.pinimg.com/originals/d4/32/30/d4323062065c96e06e794370cfc01571.png")`}}>
       <NavBar user = {user} setUser = {setUser}/>
         <main>
           <Switch> 
             <Route exact path = "/login">
               <Login user = {user}/>
             </Route>
-            <Route exact path = "/users/:id"> 
+            <Route exact path = "/users/$id"> 
               <MyProfile user = {user}/>
             </Route>
             <Route exact path="/map"> 
@@ -31,6 +31,7 @@ function App() {
             </Route>
           </Switch>
         </main>
+        </div>
     </>
   );
 }

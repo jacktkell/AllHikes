@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   # get "/", to: "hikes#index"
-  # get "users/:id", to: "users#show"
+  
+  
+  get "users/:id", to: "users#show"
   # get "hikes/:id", to: "hikes#show"
 
 

@@ -8,6 +8,19 @@ class UsersController < ApplicationController
         end
     end
     
+
+    def show
+        user = User.find(params[:id])
+        if user
+          user.hikes.to_json()
+        else
+          {error: "User not found"}.to_json
+        end
+    end
+
+
+
+
     private 
     
     def user_params

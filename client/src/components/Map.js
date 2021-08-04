@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=Pf7g32CwX_s
+// other map styles: https://snazzymaps.com/
 
 import React, { useState, useEffect } from "react";
 import {
@@ -8,7 +9,7 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-// import mapStyles from "./mapStyles";
+import mapStyles from "./mapStyles";
 
 function Map() {
 
@@ -46,8 +47,8 @@ useEffect(() => {
   return (
     <GoogleMap
       defaultZoom={10}
-      defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
-    //   defaultOptions={{ styles: mapStyles }}
+      defaultCenter={{ lat: 38.57135, lng: -78.29359 }}
+      defaultOptions={{ styles: mapStyles }}
     >
       {hikeData.map(hike => (
         <Marker
@@ -61,7 +62,7 @@ useEffect(() => {
           }}
         // SET ICON
         //   icon={{
-        //     url: `/skateboarding.svg`,
+        //     url: `./107692652-hiking-vector-icon-isolated-on-transparent-background-hiking-logo-concept.jpg`,
         //     scaledSize: new window.google.maps.Size(25, 25)
         //   }}
         />
@@ -73,14 +74,14 @@ useEffect(() => {
             setSelectedHike(null);
           }}
           position={{
-            // lat: selectedHike.x_coordinate,
-            // lng: selectedHike.y_coordinate
+             lat: selectedHike.x_coordinate,
+             lng: selectedHike.y_coordinate
           }}
         >
           <div>
-              <p>park details</p>
-            {/* <h2>{selectedPark.properties.NAME}</h2>
-            <p>{selectedPark.properties.DESCRIPTIO}</p> */}
+              {/* <p>park details</p> */}
+            <h3>{selectedHike.name}</h3>
+            <p>{selectedHike.length} miles</p>
           </div>
         </InfoWindow>
       )}
@@ -94,8 +95,8 @@ export default function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <MapWrapped
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
-          process.env.REACT_APP_GOOGLE_KEY
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${"AIzaSyDy6OoWqe7vmjnluIc3LMgNFFleqpuKd7s"
+        //   process.env.REACT_APP_GOOGLE_KEY
         }`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
