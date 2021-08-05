@@ -11,8 +11,20 @@ import HikePage from './HikePage';
 
 
 function App() {
-  const [currentUser, setCurrentUser] = useState([]);
-  //  if (!user) return <Login onLogin={setUser} />
+  const [currentUser, setCurrentUser] = useState(null);
+  
+
+  // useEffect(() => {
+  //   fetch("/myprofile").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setCurrentUser(user));
+  //     }
+  //   });
+  // }, []);
+
+  // if (!currentUser) return <LoginForm setCurrentUser={setCurrentUser} />;
+
+
   return (
     <>
     <div style={{backgroundImage: `url("https://i.pinimg.com/originals/d4/32/30/d4323062065c96e06e794370cfc01571.png")`}}>

@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   resources :hikes, only: [:index, :show]
   resources :login, only: [:create]
   resources :trip, only: [:create]
-  resources :comments, only: [:create, :index, :show]
-
-  # delete 'comments', to: 'comments#destroy'
 
 
   # Routing logic: fallback requests for React Router.
