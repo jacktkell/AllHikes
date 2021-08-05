@@ -1,8 +1,9 @@
 class LoginController < ApplicationController
     def create
 
-        user = User.find_by(name:params[:name])
-           if user && user.authenticate(params[:password])
+        user = User.find_by(name:params[:user][:name])
+        
+           if user && user.authenticate(params[:user][:password])
             
             render json: {id: user.id, name: user.name, user_hikes: user.user_hikes}
 

@@ -22,7 +22,7 @@ function HikeCollection() {
         <Wrapper>
       {
         hikes.map((hike) => (
-          <Box>
+          <Box key = {hike.id}>
           <HikeCard hike={hike}/>
           </Box>
         ))
