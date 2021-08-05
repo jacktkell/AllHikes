@@ -87,10 +87,10 @@ useEffect(() => {
               {/* <p>can add a link to hike</p> */}
             <h3>{selectedHike.name}</h3>
             <p>{selectedHike.length} miles</p>
-
+            <a href={`/hikes/${selectedHike.id}`}>View Hike</a>
             {/* <Link to="/hikes/${selectedHike.id}">Link</Link>
             <Button as = {Link} to ={src}> Details </Button> */}
-            <a href={selectedHike.id}>Link</a>
+            
             
           </div>
         </InfoWindow>

@@ -1,22 +1,24 @@
 class UsersController < ApplicationController
-    def create
-        user = User.create(user_params)
-        if user.valid?
-            render json: {id: user.id, name: user.name}
-        else 
-            render json: {message: user.errors.full_messages}
-        end
-    end
     
 
+    # def create 
+    #     user = User.create(user_params)
+    #     session[:user_id] = user.id 
+    #     rendr json: user, status: :created
+    # end
+    
+
+    # def show
+    #     user = User.find_by(id: params[:id])
+    #     if user
+    #       render json: user
+    #     else
+    #        render json: {error: "User not found"}
+    #     end
+    # end
+
     def show
-        user = User.find_by(id: params[:id])
-       
-        if user
-          render json: user
-        else
-           render json: {error: "User not found"}
-        end
+        render json: @current_user 
     end
 
 

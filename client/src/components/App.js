@@ -29,7 +29,7 @@ function App() {
               <LoginForm setCurrentUser={setCurrentUser} />
             </Route>
             <Route exact path = "/users/:id"> 
-              <MyProfile />
+              <MyProfile currentUser={currentUser} />
             </Route>
             <Route exact path = "/hikes/:id"> 
               <HikePage />
