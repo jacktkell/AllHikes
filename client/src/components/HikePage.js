@@ -19,9 +19,6 @@ function HikePage() {
       });
   }, [id]);
 
-  const comments = hike.comments
-  
-
   // ==================================== HANDLE COMMENT SUBMISSION
   async function handleSubmit(e) {
     e.preventDefault()
@@ -38,7 +35,7 @@ function HikePage() {
       body: JSON.stringify(itemData)
     })
     const json = await res.json()
-    setNewComments([...comments, json])
+    setNewComments([...newComments, json])
     // history.push("/");
   }
 
@@ -47,8 +44,10 @@ function HikePage() {
     const res = await fetch(`http://localhost:3000/comments/${commentId}`
     , {method: 'DELETE' })
     const json = await res.json()
-    console.log(json.id)
-    // setNewComments([...comments])
+    // console.log(json.id)
+
+    const newlist = newComments.filter(x => {return x.id != json.id;})
+    setNewComments([...newlist])
       
     // const res = await res.json()
     // setNewComments([...comments, json])
