@@ -70,11 +70,14 @@
 import React, {useState} from 'react';
 import {Input, Form} from './style'
 import {useHistory} from 'react-router-dom'
+
 function SignupForm({setCurrentUser}) {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState(null)
+
   const history = useHistory();
+
   async function handleSubmit(e){
     e.preventDefault()
     const user = {
@@ -91,11 +94,12 @@ function SignupForm({setCurrentUser}) {
     const userData = await res.json();
     if(res.ok) {
       setCurrentUser(userData)
-      history.push('http://localhost:3000') //Ix had just /
+      history.push('/')
     } else {
       setErrors(userData.message)
     }
   };
+  
   return (
     <>
       <Form onSubmit = {handleSubmit}> 

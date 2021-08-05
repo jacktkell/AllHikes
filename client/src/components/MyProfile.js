@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-function MyProfile(props) {
-    console.log(props.user)
+function MyProfile({currentUser}) {
 
-    // send a GET request to 3000/user/:id
     const [hikes, setHikes] = useState([])
     useEffect(() => {
         async function fetchHikes() {
-            const res = await fetch('http://localhost:3000/users/'+ props.user.id)
+            const res = await fetch(`http://localhost:3000/users/${currentUser.id}`)
             if(res.ok) {
-                const data = await res.json()
-                setHikes(data)
-                console.log(data)            
+                const currentUser = await res.json()
+                setHikes(currentUser.user_hikes)     
             }
         }
         fetchHikes()
