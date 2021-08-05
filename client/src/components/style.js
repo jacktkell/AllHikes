@@ -61,6 +61,7 @@ export const Card = styled.div`
   @media (min-width: 1375px) {
     width: 29%;
     margin: 1%;
+    text-align: center;
   }
 `;
 
