@@ -77,7 +77,7 @@ function HikePage() {
         <p>Parking Lot: {hike.x_coordinate}, {hike.y_coordinate}</p>
         <Image src={hike.image_url} alt={hike.name} />
         {newComments ? newComments.map((comment) => <h5>{comment.user_id} : {comment.content}
-          <Button onClick={handleDelete(comment.id)}>Delete</Button>
+          <Button onClick={() => handleDelete(comment.id)}>Delete</Button>
         </h5>) : null}
         {/* users_who_commented.find(id: comment.user_id[:name]) */}
       </Card>
