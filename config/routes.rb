@@ -5,6 +5,14 @@ Rails.application.routes.draw do
   resources :trip, only: [:create]
   resources :comments, only: [:create, :index, :show]
 
+  # post "/signup", to: "users#create"
+  # get "/myprofile", to: "users#show"
+  # post "/login", to: "sessions#create"
+  # delete "/logout", to: "sessions#destroy"
+
+
+  # delete 'comments', to: 'comments#destroy'
+
   # delete 'comments', to: 'comments#destroy'
 
 
