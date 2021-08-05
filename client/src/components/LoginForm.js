@@ -76,33 +76,26 @@ function LoginForm({ setCurrentUser }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // const user = {
-    //   name,
-    //   password
-    // }
-    fetch("http://localhost:3000/login", {
+    const user = {
+      name,
+      password
+    }
+    const res = await fetch("http://localhost:3000/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({name, password}),
-    }).then((r) => {
-      if(r.ok) {
-        r.json().then((user) => setCurrentUser(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
+      body: JSON.stringify({user})
+    })
+    const userData = await res.json();
+    if (userData.id) {
+     console.log(userData)
+      setCurrentUser(userData)
+      history.push("/");
+    } else {
+      setErrors(userData.message);
+    }
   }
-  //   const userData = await res.json();
-  //   if (userData.id) {
-  //     console.log(userData)
-  //     setCurrentUser(userData)
-  //     history.push("/");
-  //   } else {
-  //     setErrors(userData.message);
-  //   }
-  // }
 
   return (
     <>
