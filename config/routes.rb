@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create, :show]
   resources :hikes, only: [:index, :show]
   resources :login, only: [:create]
-  resources :trip, only: [:create]
+  resources :trips, only: [:create, :index]
   resources :comments, only: [:create, :index, :destroy]
   
 
