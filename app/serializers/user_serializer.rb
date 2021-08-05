@@ -6,6 +6,4 @@ class UserSerializer < ActiveModel::Serializer
       trip.hike 
     end
   end
-
-  has_many :trips
 end

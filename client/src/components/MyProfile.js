@@ -18,8 +18,7 @@ function MyProfile({currentUser}) {
 
     return (
         <div>
-          
-            {/* map through hikes variable, create these are the hikes I've been on */}
+          {currentUser.user_hikes.name}
         </div>
     )
 }
