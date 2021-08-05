@@ -14,20 +14,13 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        comments = Comment.find(params[:id])
-        if (comments) 
-           comments.destroy
+        comment = Comment.find(params[:id])
+        if (comment) 
+           comment.destroy
+           render json: comment
         end
-        render json: comments
+        
     end 
 
-    def show
-        comment = Comment.find_by(id: params[:id])
-        if comment
-           render json: comment
-        #    comment.destroy
-        else
-           render json: {error: "comment not found"}
-        end
-    end
+
 end

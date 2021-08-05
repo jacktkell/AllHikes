@@ -5,5 +5,5 @@ class UserSerializer < ActiveModel::Serializer
   #   object.trips.map do |trip|
   #     trip.hike 
   #   end
-  end
+  # end
 end

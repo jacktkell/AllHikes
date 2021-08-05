@@ -20,7 +20,7 @@ function HikePage() {
   }, [id]);
 
   const comments = hike.comments
-  // const users_who_commented = hike.user_comments
+  
 
   // ==================================== HANDLE COMMENT SUBMISSION
   async function handleSubmit(e) {
@@ -44,12 +44,12 @@ function HikePage() {
 
   // ==================================== HANDLE DELETE
   async function handleDelete(commentId) {
-    await fetch(`http://localhost:3000/comments/${commentId}`
-    
-    
-    , {
-    // await fetch(`http://localhost:3000/comments`, {
-      method: 'DELETE' })
+    const res = await fetch(`http://localhost:3000/comments/${commentId}`
+    , {method: 'DELETE' })
+    const json = await res.json()
+    console.log(json.id)
+    // setNewComments([...comments])
+      
     // const res = await res.json()
     // setNewComments([...comments, json])
     // history.push("/");
@@ -64,7 +64,7 @@ function HikePage() {
   //   handleDelete();
   // }, []);
 
-
+// const users_who_commented = hike.hike_comments
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -76,10 +76,10 @@ function HikePage() {
         <h4>{hike.elevation_gain} ft</h4>
         <p>Parking Lot: {hike.x_coordinate}, {hike.y_coordinate}</p>
         <Image src={hike.image_url} alt={hike.name} />
-        {newComments ? newComments.map((comment) => <h5>{comment.user_id} : {comment.content}
+        {newComments ? newComments.map((comment) => <h5>{comment.user_id} : {comment.content} 
           <Button onClick={() => handleDelete(comment.id)}>Delete</Button>
         </h5>) : null}
-        {/* users_who_commented.find(id: comment.user_id[:name]) */}
+        {/* hike.hike_comments.find(id: comment.user_id[:name]) */}
       </Card>
 
       {/* ==================================== DISPLAY COMMENT TEXT AREA */}

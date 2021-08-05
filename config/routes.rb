@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :hikes, only: [:index, :show]
   resources :login, only: [:create]
   resources :trip, only: [:create]
-  resources :comments, only: [:create, :index, :show]
+  resources :comments, only: [:create, :index, :destroy]
   
 
   # Routing logic: fallback requests for React Router.
