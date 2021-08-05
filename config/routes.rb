@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :hikes, only: [:index, :show]
   resources :login, only: [:create]
   resources :trip, only: [:create]
+  post "/signup", to: "users#create"
+  get "/myprofile", to: "users#show"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
