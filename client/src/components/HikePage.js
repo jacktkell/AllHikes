@@ -80,7 +80,8 @@ function HikePage() {
         <h2>{hike.name}</h2>
         <h3>{hike.length} miles</h3>
         <h4>{hike.elevation_gain} ft</h4>
-        <p>Parking Lot: {hike.x_coordinate}, {hike.y_coordinate}</p>
+        <p>Parking Lot: 
+        <a href={`https://www.google.com/maps/search/?api=1&query=${hike.x_coordinate},${hike.y_coordinate}`}> {hike.x_coordinate}, {hike.y_coordinate}</a></p>
 
         {/* ==================================== ADD TO HIKES BUTTON*/}
         <div><Button

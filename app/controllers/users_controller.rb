@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-    # skip_before_action :authorize, only: :create
+    #skip_before_action :authorize, only: :create
 
+    # params.first, params.second
     def create
-        user = User.create(user_params)
+        user = User.create(name: params[:user][:name], password: params[:user][:password])
         if user.valid?
-             render json: {id:user.id, name: user.name}
+             render json: {name: user.name,id:user.id}
         else 
              render json: {message: user.errors.full_messages}
         end 
@@ -25,5 +26,6 @@ class UsersController < ApplicationController
     
     def user_params
         params.permit(:name, :password)
+        byebug
     end
 end

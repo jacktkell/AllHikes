@@ -15,6 +15,7 @@ function SignupForm({setCurrentUser}) {
       name,
       password
     }
+    console.log(user)
     const res = await fetch('http://localhost:3000/users',{ 
       method: 'POST',
       headers: {
