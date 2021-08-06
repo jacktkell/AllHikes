@@ -49,8 +49,8 @@ useEffect(() => {
 
   return (
     <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{ lat: 38.57135, lng: -78.29359 }}
+      defaultZoom={7}
+      defaultCenter={{ lat: 37.57135, lng: -78.29359 }}
       defaultOptions={{ styles: mapStyles }}
     >
       {hikeData.map(hike => (
@@ -66,10 +66,10 @@ useEffect(() => {
           }}
 
         // SET ICON
-        //   icon={{
-        //     url: `./107692652-hiking-vector-icon-isolated-on-transparent-background-hiking-logo-concept.jpg`,
-        //     scaledSize: new window.google.maps.Size(25, 25)
-        //   }}
+          // icon={{
+          //   url: '/107692652-hiking-vector-icon-isolated-on-transparent-background-hiking-logo-concept.jpg',
+          //   scaledSize: new window.google.maps.Size(25, 25)
+          // }}
         />
       ))}
 

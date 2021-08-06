@@ -55,11 +55,12 @@ export const Textarea = styled.textarea`
 
 export const Card = styled.div`
   padding: 1.5em 1em 1em;
-  background: #fafafa;
+  background: #ebae34;
+  opacity: 0.75;
   box-shadow: 0px 2px 5px lightblue;
   transition: height 0.3s ease-in;
   @media (min-width: 1375px) {
-    width: 29%;
+    width: 75%;
     margin: 1%;
     text-align: center;
   }
@@ -127,7 +128,7 @@ export const Wrapper = styled.header`
 export const Logo = styled.h1`
   font-family: "Courier New";
   font-size: 3rem;
-  color: #21EE66;
+  color: #ffffff;
   margin: 0;
   line-height: 1;
   a {

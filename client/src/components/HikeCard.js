@@ -13,9 +13,9 @@ function HikeCard({hike}) {
             <h2>{hike.name}</h2>
             <h3>{hike.length} miles</h3>
             <Image src = {hike.image_url} alt = {hike.name} />
-            
+            <h4>
             <Button as = {Link} to ={src}> Details </Button>
-            
+            </h4>
 
         </Card>
     )
